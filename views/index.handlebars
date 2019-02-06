@@ -1,0 +1,29 @@
+{{!-- Set up a grid --}}
+<div class="grid-x">
+
+    {{!-- Set up a space so the page isn't hidden behind the fixed header --}}
+    <div class="cell"style="height:75px"></div>
+    <div class="cell large-1">
+    </div>
+    <div class="cell large-5">
+
+        {{!-- Use Handlebars to populate the articles in a table --}}
+        <table class="unstriped hover stack" style="opacity:.9">
+            {{#each articles}}
+            <tr data-id={{_id}}>
+                <td><a href={{link}}>{{title}}</a><br /><span style="font-size:small">{{source}}</span></td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    <div class="cell large-1">
+    </div>
+    <div class="cell large-4">
+
+        {{!-- Notes area is populated through jQuery in app.js, and is fixed so it always appears in the same place on the screen regardless of scrolling through articles --}}
+        <div id="notes" style="position:fixed;width:35%"></div>
+        
+    </div>
+    <div class="cell large-1">
+    </div>
+</div>
